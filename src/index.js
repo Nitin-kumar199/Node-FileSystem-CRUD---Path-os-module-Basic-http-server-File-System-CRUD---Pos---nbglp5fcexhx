@@ -1,54 +1,41 @@
-const fs = require('fs/promises');
+const fs = require('fs/promises')
 
 const myFileWriter = async (fileName, fileContent) => {
-	// write code here
-	fs.writeFile('file.txt', 'World', (err)=>{
-		if(err){
-			console.log(err);
-			return;
-		}
-		console.log("File Created !");
-	});
-	// dont chnage function name
+	
+	await
+	fs.writeFile(fileName, fileContent)
+	
+	
 }
+myFileWriter('file.txt', 'I am from filewriter.')
+
 
 const myFileReader = async (fileName) => {
-	// write code here
-	fs.readFile('file.txt', (err, data)=>{
-		if(err){
-			console.log(err);
-			return;
-		}
-		console.log(data);
-	});
-	// dont chnage function name
+	
+	const data=await
+	fs.readFile(fileName)
+		return data.toString();
+	
+	
 }
+myFileReader('file.txt')
+.then(data=>console.log(data));
 
 
 const myFileUpdater = async (fileName, fileContent) => {
-	// write code here
-	fs.writeFile('file.txt', 'Hello', (err)=>{
-		if(err){
-			console.log(err);
-			return;
-		}
-		console.log("File Updated !");
-	});
-	// dont chnage function name
+	await
+	fs.writeFile(fileName, fileContent)
 }
+myFileUpdater('file.txt', 'fileUpdater Updated fileWriter !')
 
 const myFileDeleter = async (fileName) => {
-	// write code here
-	fs.unlink('file.txt', (err)=>{
-		if(err){
-		console.log(err);
-		return;
-		}
-		console.log("File Deleted !");
-	});
-	// dont chnage function name
+	await
+	fs.unlink(fileName)
+	console.log('file deleted !!!');
 }
+//myFileDeleter('file.txt')
 
 
 
-module.exports = { myFileWriter, myFileUpdater, myFileReader, myFileDeleter };
+
+module.exports = { myFileWriter, myFileReader, myFileUpdater, myFileDeleter};
