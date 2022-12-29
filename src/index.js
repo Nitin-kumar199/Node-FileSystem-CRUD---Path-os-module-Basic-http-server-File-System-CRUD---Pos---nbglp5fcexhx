@@ -23,10 +23,10 @@ myFileReader('file.txt')
 
 
 const myFileUpdater = async (fileName, fileContent) => {
-	await
-	fs.writeFile(fileName, fileContent)
+	return await
+	fs.appendFile(fileName, fileContent)
 }
-myFileUpdater('file.txt', 'fileUpdater Updated fileWriter !')
+myFileUpdater('file.txt', ' fileUpdater Updated fileWriter !')
 
 const myFileDeleter = async (fileName) => {
 	await
